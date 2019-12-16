@@ -219,7 +219,7 @@ static void
 nat64_tester_bp_usage(const char *prgname)
 {
 	printf("Input Error %s [EAL options] -- \n"
-	       "  -s v4 frame size in bytes 84-1518\n"
+	       "  -s v6 frame size in bytes 84-1518\n"
 		   "  -t time of testing 1-%d s\n"
 		   "  -r Packet/s max: %d \n"			   
 		   "  -l Latency packet/s  max: %d\n"
@@ -235,19 +235,19 @@ void
 nat64_tester_bp_conf_usage(void)
 {
 	printf("Input Error"
-		   "fgd_1_IPv6 2001:db8:85a3:0:0:8a2e:370:7554 \n"
-	       "fgd_2_IPv6 2001:0db8:85a3:0000:0000:8a2e:0370:7664 \n"
-		   "fgd_1_IPv4 192.168.10.1 \n"
-		   "fgd_1_IPv4 192.168.10.1 \n"	
-		   "bgd_1_IPv6 2001:0db8:85a3:0000:0000:8a2e:0370:7774 \n"
-		   "Tester_MAC_R FF:FF:FF:FF:FF:FF \n"	
-		   "DUT_MAC_R FF:FF:FF:FF:FF:FF \n"	
+		   "IPv6-Real 2001:db8:85a3:0:0:8a2e:370:7554 \n"
+	       "IPv6-Virtual 2001:0db8:85a3:0000:0000:8a2e:0370:7664 \n"
+		   "IPv4-Real 192.168.10.1 \n"
+		   "IPv4-Virtual 192.168.10.1 \n"	
+		   "IPv6-Background 2001:0db8:85a3:0000:0000:8a2e:0370:7774 \n"
 		   "Tester_MAC_L FF:FF:FF:FF:FF:FF \n"	
-		   "DUT_MAC_L FF:FF:FF:FF:FF:FF \n"
-		   "v4s_snd_CPU X  Integer 0-90 \n"	
-		   "v4s_rcv_CPU X  Integer 0-90 \n"	
-		   "v6s_snd_CPU X  Integer 0-90 \n"	
-		   "v6s_rcv_CPU X  Integer 0-90 \n");
+		   "Tester_MAC_R FF:FF:FF:FF:FF:FF \n"	
+		   "DUT_MAC_L FF:FF:FF:FF:FF:FF \n"	
+		   "DUT_MAC_R FF:FF:FF:FF:FF:FF \n"
+		   "CPU-Left-Send  Integer 0-90 \n"	
+		   "CPU-Left-Receive  Integer 0-90 \n"	
+		   "CPU-Right-Send  Integer 0-90 \n"	
+		   "CPU-Right-Receive  Integer 0-90 \n");
 }
 static unsigned int
 nat64_tester_bp_parse_size(const char *q_arg)
