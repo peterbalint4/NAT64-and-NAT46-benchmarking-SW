@@ -182,11 +182,6 @@ struct rte_mempool * pktmbuf_pool = NULL;
 static const struct rte_eth_conf port_conf = {
 	.rxmode = {
 		.split_hdr_size = 0,
-		.header_split   = 0, /**< Header Split disabled */
-		.hw_ip_checksum = 0, /**< IP checksum offload disabled */
-		.hw_vlan_filter = 0, /**< VLAN filtering disabled */
-		.jumbo_frame    = 0, /**< Jumbo Frame Support disabled */
-		.hw_strip_crc   = 0, /**< CRC stripped by hardware */
 	},
 	.txmode = {
 		.mq_mode = ETH_MQ_TX_NONE,
@@ -1370,7 +1365,7 @@ main(int argc, char **argv)
 		rte_exit(EXIT_FAILURE, "Cannot init mbuf pool\n");
 
 	
-	if (rte_eth_dev_count() != 2)
+	if (rte_eth_dev_count_avail() != 2)
 		rte_exit(EXIT_FAILURE, " 2 Ethernet ports should be available - bye\n");
 
 
