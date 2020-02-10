@@ -10,8 +10,8 @@ Installation:<br/><br/>
 
 1, GCC, Install DPDK, DPDK devel and DPDK tool<br/>
 2, Verify dpdk with a sample app https://doc.dpdk.org/guides/sample_app_ug/hello_world.html<br/>
-3, Copy NAT64/46 benchmarking app to a folder (f.e.: folder of examples inside dpdk) <br/>
-4, Compiling App. Easiest way with the use of the Makefile in one folder of example apps. Suggested to modify the name to "APP = nat64_tester"<br/>
+3, Download NAT64/46 benchmarking app to a folder  <br/>
+4, Compiling App. Easiest way with the usage of an Example App Makefile. Suggested to modify the app name in the Makefile "APP = nat64_tester"<br/>
 5, Bind NICs verify with "dpdk-devbind --status"<br/>
 6, Run App<br/><br/>
 
