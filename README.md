@@ -1,5 +1,5 @@
 # NAT64-and-NAT46-benchmarking-SW
-Benchmarking Software for NAT64 and NAT46 tests
+Benchmarking Software for NAT64 and NAT46
 
 
 Summary:<br/><br/>
@@ -8,11 +8,11 @@ Simple easy-to-use RFC 8219 compliant application for NAT64 and NAT46 Benchmarki
 
 Installation:<br/><br/>
 
-1, GCC, Install DPDK, DPDK devel and DPDK tool<br/>
+1, Install DPDK, DPDK devel and DPDK tool<br/>
 2, Verify dpdk with a sample app https://doc.dpdk.org/guides/sample_app_ug/hello_world.html<br/>
-3, Download NAT64/46 benchmarking app to a folder  <br/>
+3, Download NAT64/46 benchmarking app  <br/>
 4, Compiling App. Easiest way with the usage of an Example App Makefile. Suggested to modify the app name in the Makefile "APP = nat64_tester"<br/>
-5, Bind NICs verify with "dpdk-devbind --status"<br/>
+5, If needed bind NICs and verify with "dpdk-devbind --status"<br/>
 6, Run App<br/><br/>
 
 Configuration:<br/><br/>
@@ -24,7 +24,6 @@ parameters:<br/>
 • -r frame rate (frames per second)<br/>
 • -l number of the latency packets per seconds.<br/>
 • -o timeout (in milliseconds), the tester stops receiving when this timeout elapsed after sending finished. (Late frames will be accounted as lost ones.)<br/>
-• -p Sending repeat allowed in case the NIC is busy (0 - deny repeat; 1 - permit repeat)<br/>
 • -n and -m specifying the proportion of foreground and background traffic. Traffic proportion is expressed by two relative prime numbers n and m, where m packets form every n packet belong to the foreground traffic and the rest (m-n) packets belong to the background traffic.<br/><br/>
 
 
@@ -49,6 +48,9 @@ CPU-Left-Receive 7;<br/><br/>
 Example Run:<br/><br/>
 
 build/nat64bench -s 84 -t 200 -r 2000000 -l 0 -o 10 -n 2 -m 2<br/>
+
+Example Results:<br/><br/>
+
 Forward frames sent: 400000000<br/>
 Forward frames received: 400000000<br/>
 Reverse frames sent: 400000000<br/>
