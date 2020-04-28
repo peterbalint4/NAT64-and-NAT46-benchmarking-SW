@@ -1618,13 +1618,11 @@ main(int argc, char **argv)
 		
 		printf("\n");
 		printf("\n");
-
-		if ((sent1 < received2) || (sent2 < received1)) rte_exit(EXIT_FAILURE, " The system can't send a packet in this period of time!!! \n");
 		
 		printf("Forward frames sent: %d \n", sent2);
-		printf("Forward frames received: %d \n", received1);
+		printf("Forward frames received: %d \n", received2);
 		printf("Reverse frames sent: %d \n", sent1);
-		printf("Reverse frames received: %d \n", received2);
+		printf("Reverse frames received: %d \n", received1);
 
 
 		//median ,percentile
